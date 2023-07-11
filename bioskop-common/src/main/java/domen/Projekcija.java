@@ -9,13 +9,45 @@ import java.util.Date;
 
 public class Projekcija implements GenericEntity {
 
+    /**
+     * ID projekcije.
+     */
     private long projekcijaID;
+
+    /**
+     * Vrsta projekcije.
+     */
     private String vrstaProjekcije;
+
+    /**
+     * Datum i vreme pocetka projekcije.
+     */
     private Date pocetakProjekcije;
+
+    /**
+     * Sala u kojoj se odrzava projekcija.
+     */
     private Sala sala;
+
+    /**
+     * Film koji se prikazuje na projekciji.
+     */
     private Film film;
+    /**
+     * Konstruktor bez parametara.
+     */
     public Projekcija() {
     }
+
+    /**
+     * Konstruktor sa parametrima.
+     *
+     * @param projekcijaID      ID projekcije
+     * @param vrstaProjekcije   vrsta projekcije
+     * @param pocetakProjekcije datum i vreme pocetka projekcije
+     * @param sala              sala u kojoj se odrzava projekcija
+     * @param film              film koji se prikazuje na projekciji
+     */
     public Projekcija(long projekcijaID, String vrstaProjekcije, Date pocetakProjekcije, Sala sala, Film film) {
         this.projekcijaID = projekcijaID;
         this.vrstaProjekcije = vrstaProjekcije;
@@ -24,44 +56,92 @@ public class Projekcija implements GenericEntity {
         this.film = film;
     }
 
-
-
+    /**
+     * Vraća ID projekcije.
+     *
+     * @return ID projekcije
+     */
     public long getProjekcijaID() {
         return projekcijaID;
     }
 
+    /**
+     * Postavlja ID projekcije.
+     *
+     * @param projekcijaID ID projekcije
+     */
     public void setProjekcijaID(long projekcijaID) {
         this.projekcijaID = projekcijaID;
     }
 
+    /**
+     * Vraća vrstu projekcije.
+     *
+     * @return vrsta projekcije
+     */
     public String getVrstaProjekcije() {
         return vrstaProjekcije;
     }
 
+    /**
+     * Postavlja vrstu projekcije.
+     *
+     * @param vrstaProjekcije vrsta projekcije
+     */
     public void setVrstaProjekcije(String vrstaProjekcije) {
         this.vrstaProjekcije = vrstaProjekcije;
     }
 
+    /**
+     * Vraća datum i vreme pocetka projekcije.
+     *
+     * @return datum i vreme pocetka projekcije
+     */
     public Date getPocetakProjekcije() {
         return pocetakProjekcije;
     }
 
+    /**
+     * Postavlja datum i vreme pocetka projekcije.
+     *
+     * @param pocetakProjekcije datum i vreme pocetka projekcije
+     */
     public void setPocetakProjekcije(Date pocetakProjekcije) {
         this.pocetakProjekcije = pocetakProjekcije;
     }
 
+    /**
+     * Vraća salu u kojoj se odrzava projekcija.
+     *
+     * @return sala
+     */
     public Sala getSala() {
         return sala;
     }
 
+    /**
+     * Postavlja salu u kojoj se odrzava projekcija.
+     *
+     * @param sala sala
+     */
     public void setSala(Sala sala) {
         this.sala = sala;
     }
 
+    /**
+     * Vraća film koji se prikazuje na projekciji.
+     *
+     * @return film
+     */
     public Film getFilm() {
         return film;
     }
 
+    /**
+     * Postavlja film koji se prikazuje na projekciji.
+     *
+     * @param film film
+     */
     public void setFilm(Film film) {
         this.film = film;
     }

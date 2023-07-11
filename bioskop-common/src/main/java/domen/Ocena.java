@@ -5,14 +5,42 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Ocena implements GenericEntity {
+
+
+	/**
+     * ID ocene.
+     */
     private long ocenaID;
+    
+    /**
+     * Ocena koja je dodeljena filmu.
+     */
     private int ocena;
+    
+    /**
+     * Korisnik koji je dao ocenu.
+     */
     private Korisnik korisnik;
+    
+    /**
+     * Film koji je ocenjen.
+     */
     private Film film;
 
+    /**
+     * Konstruktor bez parametara.
+     */
     public Ocena() {
     }
 
+    /**
+     * Konstruktor sa parametrima.
+     *
+     * @param ocenaID   ID ocene
+     * @param ocena     ocena
+     * @param korisnik  korisnik koji je dao ocenu
+     * @param film      film koji je ocenjen
+     */
     public Ocena(long ocenaID, int ocena, Korisnik korisnik, Film film) {
         this.ocena = ocena;
         this.ocenaID = ocenaID;
@@ -20,34 +48,74 @@ public class Ocena implements GenericEntity {
         this.film = film;
     }
 
+    /**
+     * Vraća ocenu.
+     *
+     * @return ocena
+     */
     public int getOcena() {
         return ocena;
     }
 
+    /**
+     * Postavlja ocenu.
+     *
+     * @param ocena ocena
+     */
     public void setOcena(int ocena) {
         this.ocena = ocena;
     }
 
+    /**
+     * Vraća korisnika koji je dao ocenu.
+     *
+     * @return korisnik
+     */
     public Korisnik getKorisnik() {
         return korisnik;
     }
 
+    /**
+     * Vraća ID ocene.
+     *
+     * @return ID ocene
+     */
     public long getOcenaID() {
         return ocenaID;
     }
 
+    /**
+     * Postavlja ID ocene.
+     *
+     * @param ocenaID ID ocene
+     */
     public void setOcenaID(long ocenaID) {
         this.ocenaID = ocenaID;
     }
 
+    /**
+     * Postavlja korisnika koji je dao ocenu.
+     *
+     * @param korisnik korisnik
+     */
     public void setKorisnik(Korisnik korisnik) {
         this.korisnik = korisnik;
     }
 
+    /**
+     * Vraća film koji je ocenjen.
+     *
+     * @return film
+     */
     public Film getFilm() {
         return film;
     }
 
+    /**
+     * Postavlja film koji je ocenjen.
+     *
+     * @param film film
+     */
     public void setFilm(Film film) {
         this.film = film;
     }

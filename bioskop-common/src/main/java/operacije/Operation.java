@@ -2,6 +2,12 @@ package operacije;
 
 import java.io.Serializable;
 
+/**
+ * Enumeracija za operaciju, opisuje sta je potrebno uciniti sa poslatim domenskim objektom.
+ * 
+ * @author Novica
+ */
+
 public enum Operation implements Serializable {
     LOGIN,    VRATI_KORISNIKE,    VRATI_FILMOVE,
     VRATI_PROJEKCIJE,    OBRISI_FILM,    OBRISI_KORISNIKA,

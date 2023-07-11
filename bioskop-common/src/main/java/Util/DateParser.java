@@ -3,22 +3,48 @@ package Util;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ * Klasa koja se koristi za parsiranje datuma i vremena.
+ */
 public class DateParser {
+/**
+ * Formator datuma koji ne ukljucuje informacije o trenutnom vremenu
+ */
+    private static final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+    
+    /**
+     * Formator datuma koji ukljucuje informacije o trenutnom vremenu
+     */
+    private static final SimpleDateFormat dateTimeFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
-    private static final SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-
-    private static final SimpleDateFormat vreme = new SimpleDateFormat("yyy-MM-dd HH:mm:ss");
-
+    /**
+     * Pretvara datum u formatiranu string reprezentaciju.
+     *
+     * @param date datum koji se formatira
+     * @return formatirana string reprezentacija datuma
+     */
     public static String toString(Date date) {
-        return (date == null? "NULL" : format.format(date));
+        return (date == null ? "NULL" : dateFormat.format(date));
     }
 
-    public static java.util.Date sqlDateToUtilDate(java.sql.Date date){
-        return new java.util.Date(date.getTime());
+    /**
+     * Pretvara SQL datum u Java.util.Date objekat.
+     *
+     * @param date SQL datum koji se konvertuje
+     * @return Java.util.Date objekat
+     */
+    public static Date sqlDateToUtilDate(java.sql.Date date) {
+        return new Date(date.getTime());
     }
 
-    public static String timeToString(Date date){
-        return (date == null ? "NULL" : vreme.format(date));
+    /**
+     * Pretvara datum i vreme u formatiranu string reprezentaciju.
+     *
+     * @param date datum i vreme koje se formatira
+     * @return formatirana string reprezentacija datuma i vremena
+     */
+    public static String timeToString(Date date) {
+        return (date == null ? "NULL" : dateTimeFormat.format(date));
     }
-
 }
+
