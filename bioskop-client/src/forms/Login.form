@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="forms.Login">
+  <grid id="27dc6" binding="pnlMain" layout-manager="BorderLayout" hgap="0" vgap="0">
+    <constraints>
+      <xy x="20" y="20" width="500" height="400"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <grid id="a7e11" binding="pnlButtonBar" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+        <constraints border-constraint="South"/>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="49b5d" class="javax.swing.JButton" binding="btnLogin">
+            <constraints/>
+            <properties>
+              <text value="LOGIN"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <component id="d31d9" class="javax.swing.JLabel" binding="lblTitle">
+        <constraints border-constraint="North"/>
+        <properties>
+          <horizontalAlignment value="0"/>
+          <horizontalTextPosition value="0"/>
+          <text value="Administrator"/>
+        </properties>
+      </component>
+      <grid id="d8c7f" binding="pnlInner" layout-manager="BorderLayout" hgap="0" vgap="0">
+        <constraints border-constraint="Center"/>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <grid id="1d9ab" binding="pnlUser" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+            <constraints border-constraint="North"/>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="6083c" class="javax.swing.JLabel" binding="lblUser">
+                <constraints/>
+                <properties>
+                  <text value="Username:"/>
+                </properties>
+              </component>
+              <component id="51c0c" class="javax.swing.JTextField" binding="txtUser">
+                <constraints/>
+                <properties>
+                  <columns value="20"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="c42ed" binding="pnlPass" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+            <constraints border-constraint="Center"/>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="d15e4" class="javax.swing.JLabel" binding="lblPass">
+                <constraints/>
+                <properties>
+                  <text value="Password:"/>
+                </properties>
+              </component>
+              <component id="5d81" class="javax.swing.JPasswordField" binding="txtPass">
+                <constraints/>
+                <properties>
+                  <columns value="20"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+        </children>
+      </grid>
+    </children>
+  </grid>
+</form>
