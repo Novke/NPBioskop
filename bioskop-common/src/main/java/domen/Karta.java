@@ -8,16 +8,53 @@ import java.sql.SQLException;
 
 public class Karta implements GenericEntity {
 
+	 /**
+     * ID karte.
+     */
     private long kartaID;
+    
+    /**
+     * Tip karte.
+     */
     private String tipKarte;
+    
+    /**
+     * Red na kojem se nalazi mesto na karti.
+     */
     private int red;
+    
+    /**
+     * Mesto na karti.
+     */
     private int mesto;
+    
+    /**
+     * Projekcija na kojoj je karta kupljena.
+     */
     private Projekcija projekcija;
 
+    /**
+     * Korisnik koji je kupio kartu.
+     */
     private Korisnik korisnik;
 
+    /**
+     * Konstruktor bez parametara.
+     */
     public Karta() {
     }
+    
+    
+    /**
+     * Konstruktor sa parametrima.
+     *
+     * @param kartaID       ID karte
+     * @param tipKarte      tip karte
+     * @param red           red na kojem se nalazi mesto na karti
+     * @param mesto         mesto na karti
+     * @param projekcija    projekcija na kojoj je karta kupljena
+     * @param korisnik      korisnik koji je kupio kartu
+     */
     public Karta(long kartaID, String tipKarte, int red, int mesto, Projekcija projekcija, Korisnik korisnik) {
         this.kartaID = kartaID;
         this.tipKarte = tipKarte;
@@ -27,50 +64,110 @@ public class Karta implements GenericEntity {
         this.korisnik = korisnik;
     }
 
+    /**
+     * Vraća ID karte.
+     *
+     * @return ID karte
+     */
     public long getKartaID() {
         return kartaID;
     }
 
+    /**
+     * Postavlja ID karte.
+     *
+     * @param kartaID ID karte
+     */
     public void setKartaID(long kartaID) {
         this.kartaID = kartaID;
     }
 
+    /**
+     * Vraća tip karte.
+     *
+     * @return tip karte
+     */
     public String getTipKarte() {
         return tipKarte;
     }
 
+    /**
+     * Postavlja tip karte.
+     *
+     * @param tipKarte tip karte
+     */
     public void setTipKarte(String tipKarte) {
         this.tipKarte = tipKarte;
     }
 
+    /**
+     * Vraća red na kojem se nalazi mesto na karti.
+     *
+     * @return red na karti
+     */
     public int getRed() {
         return red;
     }
 
+    /**
+     * Postavlja red na kojem se nalazi mesto na karti.
+     *
+     * @param red red na karti
+     */
     public void setRed(int red) {
         this.red = red;
     }
 
+    /**
+     * Vraća mesto na karti.
+     *
+     * @return mesto na karti
+     */
     public int getMesto() {
         return mesto;
     }
 
+    /**
+     * Postavlja mesto na karti.
+     *
+     * @param mesto mesto na karti
+     */
     public void setMesto(int mesto) {
         this.mesto = mesto;
     }
 
+    /**
+     * Vraća projekciju na kojoj je karta kupljena.
+     *
+     * @return projekcija
+     */
     public Projekcija getProjekcija() {
         return projekcija;
     }
 
+    /**
+     * Postavlja projekciju na kojoj je karta kupljena.
+     *
+     * @param projekcija projekcija
+     */
     public void setProjekcija(Projekcija projekcija) {
         this.projekcija = projekcija;
     }
 
+    /**
+     * Vraća korisnika koji je kupio kartu.
+     *
+     * @return korisnik
+     */
     public Korisnik getKorisnik() {
         return korisnik;
     }
 
+    /**
+     * Postavlja korisnika koji je kupio kartu.
+     *
+     * @param korisnik korisnik
+     */
     public void setKorisnik(Korisnik korisnik) {
         this.korisnik = korisnik;
     }

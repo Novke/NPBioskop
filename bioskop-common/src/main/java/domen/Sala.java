@@ -6,29 +6,65 @@ import java.sql.SQLException;
 
 public class Sala implements GenericEntity {
 
+	/**
+     * Broj sale.
+     */
     private long brojSale;
+    
+    /**
+     * Broj sedišta u sali.
+     */
     private int brojSedista;
 
+    /**
+     * Konstruktor bez parametara.
+     */
     public Sala() {
     }
 
+    /**
+     * Konstruktor sa parametrima.
+     *
+     * @param brojSale      broj sale
+     * @param brojSedista   broj sedišta u sali
+     */
     public Sala(long brojSale, int brojSedista) {
         this.brojSale = brojSale;
         this.brojSedista = brojSedista;
     }
 
+    /**
+     * Vraća broj sale.
+     *
+     * @return broj sale
+     */
     public long getBrojSale() {
         return brojSale;
     }
 
+    /**
+     * Postavlja broj sale.
+     *
+     * @param brojSale broj sale
+     */
     public void setBrojSale(long brojSale) {
         this.brojSale = brojSale;
     }
 
+    /**
+     * Vraća broj sedišta u sali.
+     *
+     * @return broj sedišta
+     */
     public int getBrojSedista() {
         return brojSedista;
     }
 
+    /**
+     * Postavlja broj sedišta u sali.
+     *
+     * @param brojSedista broj sedišta
+     */
     public void setBrojSedista(int brojSedista) {
         this.brojSedista = brojSedista;
     }

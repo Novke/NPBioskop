@@ -7,18 +7,57 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Date;
 
+/**
+ * Predstavlja film.
+ */
 public class Film implements GenericEntity {
 
+    /**
+     * ID filma.
+     */
     private long filmID;
+    
+    /**
+     * Ime filma.
+     */
     private String imeFilma;
+    
+    /**
+     * Ocena filma.
+     */
     private double ocena;
+    
+    /**
+     * Trajanje filma u minutima.
+     */
     private int trajanje;
+    
+    /**
+     * Opis filma.
+     */
     private String opis;
+    
+    /**
+     * Datum pocetka prikazivanja filma.
+     */
     private Date pocetakPrikazivanja;
 
+    /**
+     * Konstruktor bez parametara.
+     */
     public Film() {
     }
 
+    /**
+     * Konstruktor sa parametrima.
+     *
+     * @param filmID                ID filma
+     * @param imeFilma              ime filma
+     * @param ocena                 ocena filma
+     * @param trajanje              trajanje filma u minutima
+     * @param opis                  opis filma
+     * @param pocetakPrikazivanja   datum pocetka prikazivanja filma
+     */
     public Film(long filmID, String imeFilma, double ocena, int trajanje, String opis, Date pocetakPrikazivanja) {
         this.filmID = filmID;
         this.imeFilma = imeFilma;
@@ -28,50 +67,110 @@ public class Film implements GenericEntity {
         this.pocetakPrikazivanja = pocetakPrikazivanja;
     }
 
+    /**
+     * Vraća ID filma.
+     *
+     * @return ID filma
+     */
     public long getFilmID() {
         return filmID;
     }
 
+    /**
+     * Postavlja ID filma.
+     *
+     * @param filmID ID filma
+     */
     public void setFilmID(long filmID) {
         this.filmID = filmID;
     }
 
+    /**
+     * Vraća ime filma.
+     *
+     * @return ime filma
+     */
     public String getImeFilma() {
         return imeFilma;
     }
 
+    /**
+     * Postavlja ime filma.
+     *
+     * @param imeFilma ime filma
+     */
     public void setImeFilma(String imeFilma) {
         this.imeFilma = imeFilma;
     }
 
+    /**
+     * Vraća ocenu filma.
+     *
+     * @return ocena filma
+     */
     public double getOcena() {
         return ocena;
     }
 
+    /**
+     * Postavlja ocenu filma.
+     *
+     * @param ocena ocena filma
+     */
     public void setOcena(double ocena) {
         this.ocena = ocena;
     }
 
+    /**
+     * Vraća trajanje filma u minutima.
+     *
+     * @return trajanje filma
+     */
     public int getTrajanje() {
         return trajanje;
     }
 
+    /**
+     * Postavlja trajanje filma u minutima.
+     *
+     * @param trajanje trajanje filma
+     */
     public void setTrajanje(int trajanje) {
         this.trajanje = trajanje;
     }
 
+    /**
+     * Vraća opis filma.
+     *
+     * @return opis filma
+     */
     public String getOpis() {
         return opis;
     }
 
+    /**
+     * Postavlja opis filma.
+     *
+     * @param opis opis filma
+     */
     public void setOpis(String opis) {
         this.opis = opis;
     }
 
+    /**
+     * Vraća datum pocetka prikazivanja filma.
+     *
+     * @return datum pocetka prikazivanja filma
+     */
     public Date getPocetakPrikazivanja() {
         return pocetakPrikazivanja;
     }
 
+    /**
+     * Postavlja datum pocetka prikazivanja filma.
+     *
+     * @param pocetakPrikazivanja datum pocetka prikazivanja filma
+     */
     public void setPocetakPrikazivanja(Date pocetakPrikazivanja) {
         this.pocetakPrikazivanja = pocetakPrikazivanja;
     }
