@@ -1,6 +1,7 @@
 package rs.np.ac.bg.bioskop_server.Controller;
 
 import domen.*;
+import rs.np.ac.bg.bioskop_common.domen.Administrator;
 import rs.np.ac.bg.bioskop_server.operation.*;
 import rs.np.ac.bg.bioskop_server.operation.Film.*;
 import rs.np.ac.bg.bioskop_server.operation.Film.VratiFilm;
@@ -116,10 +117,12 @@ public class Controller {
     }
 
     public boolean login(String un, String pw) {
-        return un.equalsIgnoreCase("admin") && pw.equalsIgnoreCase("admin");
+    	Administrator admin = new Administrator("admin", "admin");
+        return un.equalsIgnoreCase(admin.getUser()) && pw.equalsIgnoreCase(admin.getPass());
     }
 
-    public void deleteFilm(Film film) throws Exception {
+    
+	public void deleteFilm(Film film) throws Exception {
         AbstractGenericOperation op = new ObrisiFilm();
         op.excecute(film);
     }
@@ -182,5 +185,7 @@ public class Controller {
         }
         deleteKarte(kartas);
     }
+    
+    
     
 }
