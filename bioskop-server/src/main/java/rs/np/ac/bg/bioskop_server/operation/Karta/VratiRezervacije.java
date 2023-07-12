@@ -1,8 +1,8 @@
 package rs.np.ac.bg.bioskop_server.operation.Karta;
 
-import domen.Karta;
-import domen.Korisnik;
-import domen.Projekcija;
+import rs.np.ac.bg.bioskop_common.domen.Karta;
+import rs.np.ac.bg.bioskop_common.domen.Korisnik;
+import rs.np.ac.bg.bioskop_common.domen.Projekcija;
 import rs.np.ac.bg.bioskop_server.operation.AbstractGenericOperation;
 
 import java.util.ArrayList;

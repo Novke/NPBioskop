@@ -4,7 +4,6 @@ package rs.np.ac.bg.bioskop_common.domen;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import domen.*;
 
 public class OcenaTest {
     private Ocena ocena;

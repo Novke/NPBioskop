@@ -1,7 +1,6 @@
 package rs.np.ac.bg.bioskop_server.Controller;
 
-import domen.*;
-import rs.np.ac.bg.bioskop_common.domen.Administrator;
+import rs.np.ac.bg.bioskop_common.domen.*;
 import rs.np.ac.bg.bioskop_server.operation.*;
 import rs.np.ac.bg.bioskop_server.operation.Film.*;
 import rs.np.ac.bg.bioskop_server.operation.Film.VratiFilm;

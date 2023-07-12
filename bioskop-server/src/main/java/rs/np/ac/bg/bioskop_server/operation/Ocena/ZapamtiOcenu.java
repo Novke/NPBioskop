@@ -1,6 +1,6 @@
 package rs.np.ac.bg.bioskop_server.operation.Ocena;
 
-import domen.Ocena;
+import rs.np.ac.bg.bioskop_common.domen.Ocena;
 import rs.np.ac.bg.bioskop_server.operation.AbstractGenericOperation;
 
 import java.util.List;

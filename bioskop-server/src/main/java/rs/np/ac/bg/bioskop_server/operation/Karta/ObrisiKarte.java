@@ -1,6 +1,6 @@
 package rs.np.ac.bg.bioskop_server.operation.Karta;
 
-import domen.Karta;
+import rs.np.ac.bg.bioskop_common.domen.Karta;
 import rs.np.ac.bg.bioskop_server.operation.AbstractGenericOperation;
 
 import java.util.List;

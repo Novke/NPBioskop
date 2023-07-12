@@ -5,11 +5,15 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
-import domen.*;
 
 import java.util.*;
 import java.io.*;
 
+import rs.np.ac.bg.bioskop_common.domen.Film;
+import rs.np.ac.bg.bioskop_common.domen.Karta;
+import rs.np.ac.bg.bioskop_common.domen.Korisnik;
+import rs.np.ac.bg.bioskop_common.domen.Ocena;
+import rs.np.ac.bg.bioskop_common.domen.Projekcija;
 import rs.np.ac.bg.bioskop_server.Controller.Controller;
 
 public class Deserialize {

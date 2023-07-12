@@ -1,6 +1,6 @@
 package rs.np.ac.bg.bioskop_server.operation.Sala;
 
-import domen.Sala;
+import rs.np.ac.bg.bioskop_common.domen.Sala;
 import rs.np.ac.bg.bioskop_server.operation.AbstractGenericOperation;
 
 import java.util.List;

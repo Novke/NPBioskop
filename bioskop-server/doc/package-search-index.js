@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"rs.np.ac.bg.bioskop_common.domen"},{"l":"rs.np.ac.bg.bioskop_common.operacije"},{"l":"rs.np.ac.bg.bioskop_common.Util"}];updateSearchResults();

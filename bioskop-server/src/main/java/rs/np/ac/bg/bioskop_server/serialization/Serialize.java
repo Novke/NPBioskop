@@ -3,7 +3,11 @@ package rs.np.ac.bg.bioskop_server.serialization;
 
 import java.util.List;
 import java.util.ArrayList;
-import domen.*;
+import rs.np.ac.bg.bioskop_common.domen.Film;
+import rs.np.ac.bg.bioskop_common.domen.Karta;
+import rs.np.ac.bg.bioskop_common.domen.Korisnik;
+import rs.np.ac.bg.bioskop_common.domen.Ocena;
+import rs.np.ac.bg.bioskop_common.domen.Projekcija;
 import rs.np.ac.bg.bioskop_server.Controller.Controller;
 import java.io.*;
 

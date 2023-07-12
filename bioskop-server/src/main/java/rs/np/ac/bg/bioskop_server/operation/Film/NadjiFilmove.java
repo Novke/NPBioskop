@@ -1,6 +1,6 @@
 package rs.np.ac.bg.bioskop_server.operation.Film;
 
-import domen.Film;
+import rs.np.ac.bg.bioskop_common.domen.Film;
 import rs.np.ac.bg.bioskop_server.operation.AbstractGenericOperation;
 
 import java.util.List;

@@ -1,8 +1,8 @@
 package rs.np.ac.bg.bioskop_server.operation.Projekcija;
 
-import domen.Film;
-import domen.Projekcija;
-import domen.Sala;
+import rs.np.ac.bg.bioskop_common.domen.Film;
+import rs.np.ac.bg.bioskop_common.domen.Projekcija;
+import rs.np.ac.bg.bioskop_common.domen.Sala;
 import rs.np.ac.bg.bioskop_server.operation.AbstractGenericOperation;
 
 import java.util.List;

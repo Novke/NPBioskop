@@ -1,11 +1,16 @@
 package rs.np.ac.bg.bioskop_server.thread;
 
+import rs.np.ac.bg.bioskop_common.domen.Film;
+import rs.np.ac.bg.bioskop_common.domen.GenericEntity;
+import rs.np.ac.bg.bioskop_common.domen.Karta;
+import rs.np.ac.bg.bioskop_common.domen.Korisnik;
+import rs.np.ac.bg.bioskop_common.domen.Ocena;
+import rs.np.ac.bg.bioskop_common.domen.Projekcija;
+import rs.np.ac.bg.bioskop_common.operacije.Receiver;
+import rs.np.ac.bg.bioskop_common.operacije.Request;
+import rs.np.ac.bg.bioskop_common.operacije.Response;
+import rs.np.ac.bg.bioskop_common.operacije.Sender;
 import rs.np.ac.bg.bioskop_server.Controller.Controller;
-import domen.*;
-import operacije.Receiver;
-import operacije.Request;
-import operacije.Response;
-import operacije.Sender;
 
 import java.util.ArrayList;
 import java.util.List;

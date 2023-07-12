@@ -9,12 +9,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import Util.DateParser;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Date;
-import domen.*;
+import rs.np.ac.bg.bioskop_common.Util.DateParser;
 
 public class KorisnikTest {
 

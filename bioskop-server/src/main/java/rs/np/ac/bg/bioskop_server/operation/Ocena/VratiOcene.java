@@ -1,10 +1,10 @@
 package rs.np.ac.bg.bioskop_server.operation.Ocena;
 
+import rs.np.ac.bg.bioskop_common.domen.Film;
+import rs.np.ac.bg.bioskop_common.domen.Karta;
+import rs.np.ac.bg.bioskop_common.domen.Korisnik;
+import rs.np.ac.bg.bioskop_common.domen.Ocena;
 import rs.np.ac.bg.bioskop_server.Controller.Controller;
-import domen.Film;
-import domen.Karta;
-import domen.Korisnik;
-import domen.Ocena;
 import rs.np.ac.bg.bioskop_server.operation.AbstractGenericOperation;
 
 import java.util.ArrayList;

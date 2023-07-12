@@ -8,8 +8,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
-import Util.DateParser;
-import domen.Film;
+import rs.np.ac.bg.bioskop_common.Util.DateParser;
 
 import java.util.Date;
 
@@ -145,8 +144,10 @@ public class FilmTest {
         Mockito.when(resultSet.getDouble("ocena")).thenReturn(7.5);
         Mockito.when(resultSet.getInt("trajanje")).thenReturn(120);
         Mockito.when(resultSet.getString("opis")).thenReturn("Ovo je testni film");
-        Mockito.when(resultSet.getDate("pocetakPrikazivanja")).thenReturn((java.sql.Date) new Date());
-        return resultSet;
+        Date startDate = new Date();
+        java.sql.Date sqlStartDate = new java.sql.Date(startDate.getTime());
+        Mockito.when(resultSet.getDate("pocetakPrikazivanja")).thenReturn(sqlStartDate);
+return resultSet;
     }
 }
 
