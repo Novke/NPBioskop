@@ -8,15 +8,35 @@ import operation.AbstractGenericOperation;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Operacija koja vraća rezervacije za određenu projekciju.
+ */
 public class VratiRezervacije extends AbstractGenericOperation {
+	
+	/**
+	 * Privatna lista karata namenjena za vracane preko Getter-a
+	 */
     List<Karta> list = new ArrayList<>();
+
+    /**
+     * Proverava preuslove za izvršavanje operacije.
+     *
+     * @param param parametar operacije (Projekcija)
+     * @throws Exception ukoliko dođe do greške prilikom provere preuslova
+     */
     @Override
     protected void preconditions(Object param) throws Exception {
         if (param == null) throw new Exception("Parametar je null");
         Projekcija projekcija = (Projekcija) param;
-        if (projekcija.getId()==null || projekcija.getId()==0) throw new Exception("ID Projekcije je los");
+        if (projekcija.getId() == null || projekcija.getId() == 0) throw new Exception("ID Projekcije je los");
     }
 
+    /**
+     * Izvršava operaciju vraćanja rezervacija za datu projekciju.
+     *
+     * @param param parametar operacije (Projekcija)
+     * @throws Exception ukoliko dođe do greške prilikom izvršavanja operacije
+     */
     @Override
     protected void executeOperation(Object param) throws Exception {
         Projekcija projekcija = (Projekcija) param;
@@ -32,7 +52,13 @@ public class VratiRezervacije extends AbstractGenericOperation {
         }
     }
 
+    /**
+     * Vraća listu rezervacija za projekciju.
+     *
+     * @return lista rezervacija
+     */
     public List<Karta> getList() {
         return list;
     }
 }
+

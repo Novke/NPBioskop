@@ -3,26 +3,55 @@ package operation.Film;
 import domen.Film;
 import operation.AbstractGenericOperation;
 
-import java.util.List;
+/**
+ * Operacija za vraćanje filma na osnovu ID-ja.
+ */
+public class VratiFilm extends AbstractGenericOperation {
 
-public class VratiFIlm extends AbstractGenericOperation {
+	/**
+	 * Privatni atribut film koji ce se vratiti preko Getter-a
+	 */
+    private Film film;
 
-    Film film;
-
-
+    /**
+     * {@inheritDoc}
+     * <p>
+     * Proverava da li je parametar null i da li film ima ID vrednost.
+     * </p>
+     *
+     * @param param Parametar koji predstavlja film za vraćanje
+     * @throws Exception ako je parametar null ili ako film nema ID vrednost
+     */
     @Override
     protected void preconditions(Object param) throws Exception {
-
-        if (param == null) throw new Exception("Parametar je null");
+        if (param == null) {
+            throw new Exception("Parametar je null");
+        }
         Film film = (Film) param;
-
-        if (film.getId() == null) throw new Exception("ID filma je null");
+        if (film.getId() == null) {
+            throw new Exception("ID filma je null");
+        }
     }
 
+    /**
+     * {@inheritDoc}
+     * <p>
+     * Izvršava operaciju vraćanja filma na osnovu ID-ja iz repozitorijuma.
+     * </p>
+     *
+     * @param param Parametar koji predstavlja film za vraćanje
+     * @throws Exception ako dođe do greške prilikom izvršavanja operacije
+     */
     @Override
     protected void executeOperation(Object param) throws Exception {
-        film = (Film) repository.getById((Film)param);
+        film = (Film) repository.getById((Film) param);
     }
+
+    /**
+     * Metoda za dobijanje vraćenog filma.
+     *
+     * @return Film koji je vraćen
+     */
     public Film getFilm() {
         return film;
     }
