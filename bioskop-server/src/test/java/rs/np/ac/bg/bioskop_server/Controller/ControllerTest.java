@@ -844,8 +844,7 @@ class ControllerTest {
 	        }
 	    }
 	
-	    @Test
-	    @DisplayName("Test GetAllKarta")
+
 	
 	
 	

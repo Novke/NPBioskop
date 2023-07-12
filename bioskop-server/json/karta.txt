@@ -1,0 +1,110 @@
+[
+  {
+    "KartaID": 132,
+    "Red": 1,
+    "Mesto": 2,
+    "Projekcija": {
+      "ProjekcijaID": 40,
+      "VrstaProjekcije": "bbb",
+      "PocetakProjekcije": "Jul 27, 2023, 9:40:30 PM",
+      "Sala": {
+        "BrojSale": 4,
+        "BrojSedista": 4
+      },
+      "Film": {
+        "FilmID": 20,
+        "ImeFilma": "Montevideo",
+        "Ocena": 9.0,
+        "Trajanje": 100,
+        "Opis": "Opis1",
+        "PocetakPrikazivanja": "Jul 4, 2023"
+      }
+    },
+    "Korisnik": {
+      "KorisnikID": 18,
+      "Ime": "Novica",
+      "DatumRodjenja": "Jun 1, 1960"
+    }
+  },
+  {
+    "KartaID": 134,
+    "Red": 1,
+    "Mesto": 3,
+    "Projekcija": {
+      "ProjekcijaID": 40,
+      "VrstaProjekcije": "bbb",
+      "PocetakProjekcije": "Jul 27, 2023, 9:40:30 PM",
+      "Sala": {
+        "BrojSale": 4,
+        "BrojSedista": 4
+      },
+      "Film": {
+        "FilmID": 20,
+        "ImeFilma": "Montevideo",
+        "Ocena": 9.0,
+        "Trajanje": 100,
+        "Opis": "Opis1",
+        "PocetakPrikazivanja": "Jul 4, 2023"
+      }
+    },
+    "Korisnik": {
+      "KorisnikID": 18,
+      "Ime": "Novica",
+      "DatumRodjenja": "Jun 1, 1960"
+    }
+  },
+  {
+    "KartaID": 135,
+    "Red": 1,
+    "Mesto": 4,
+    "Projekcija": {
+      "ProjekcijaID": 40,
+      "VrstaProjekcije": "bbb",
+      "PocetakProjekcije": "Jul 27, 2023, 9:40:30 PM",
+      "Sala": {
+        "BrojSale": 4,
+        "BrojSedista": 4
+      },
+      "Film": {
+        "FilmID": 20,
+        "ImeFilma": "Montevideo",
+        "Ocena": 9.0,
+        "Trajanje": 100,
+        "Opis": "Opis1",
+        "PocetakPrikazivanja": "Jul 4, 2023"
+      }
+    },
+    "Korisnik": {
+      "KorisnikID": 18,
+      "Ime": "Novica",
+      "DatumRodjenja": "Jun 1, 1960"
+    }
+  },
+  {
+    "KartaID": 133,
+    "Red": 2,
+    "Mesto": 2,
+    "Projekcija": {
+      "ProjekcijaID": 41,
+      "VrstaProjekcije": "ggg",
+      "PocetakProjekcije": "Jul 12, 2023, 9:40:44 PM",
+      "Sala": {
+        "BrojSale": 3,
+        "BrojSedista": 3
+      },
+      "Film": {
+        "FilmID": 21,
+        "ImeFilma": "Mali Budo",
+        "Ocena": 8.0,
+        "Trajanje": 120,
+        "Opis": "Opis2",
+        "PocetakPrikazivanja": "Jul 3, 2023"
+      }
+    },
+    "Korisnik": {
+      "KorisnikID": 19,
+      "Ime": "Petar",
+      "DatumRodjenja": "Nov 28, 2003"
+    }
+  }
+]

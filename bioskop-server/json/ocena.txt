@@ -1,0 +1,70 @@
+[
+  {
+    "OcenaID": 22,
+    "Ocena": 9,
+    "Korisnik": {
+      "KorisnikID": 18,
+      "Ime": "Novica",
+      "DatumRodjenja": "Jun 1, 1960"
+    },
+    "Film": {
+      "FilmID": 20,
+      "ImeFilma": "Montevideo",
+      "Ocena": 9.0,
+      "Trajanje": 100,
+      "Opis": "Opis1",
+      "PocetakPrikazivanja": "Jul 4, 2023"
+    }
+  },
+  {
+    "OcenaID": 23,
+    "Ocena": 6,
+    "Korisnik": {
+      "KorisnikID": 18,
+      "Ime": "Novica",
+      "DatumRodjenja": "Jun 1, 1960"
+    },
+    "Film": {
+      "FilmID": 21,
+      "ImeFilma": "Mali Budo",
+      "Ocena": 8.0,
+      "Trajanje": 120,
+      "Opis": "Opis2",
+      "PocetakPrikazivanja": "Jul 3, 2023"
+    }
+  },
+  {
+    "OcenaID": 24,
+    "Ocena": 4,
+    "Korisnik": {
+      "KorisnikID": 19,
+      "Ime": "Petar",
+      "DatumRodjenja": "Nov 28, 2003"
+    },
+    "Film": {
+      "FilmID": 20,
+      "ImeFilma": "Montevideo",
+      "Ocena": 9.0,
+      "Trajanje": 100,
+      "Opis": "Opis1",
+      "PocetakPrikazivanja": "Jul 4, 2023"
+    }
+  },
+  {
+    "OcenaID": 25,
+    "Ocena": 3,
+    "Korisnik": {
+      "KorisnikID": 19,
+      "Ime": "Petar",
+      "DatumRodjenja": "Nov 28, 2003"
+    },
+    "Film": {
+      "FilmID": 21,
+      "ImeFilma": "Mali Budo",
+      "Ocena": 8.0,
+      "Trajanje": 120,
+      "Opis": "Opis2",
+      "PocetakPrikazivanja": "Jul 3, 2023"
+    }
+  }
+]

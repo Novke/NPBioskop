@@ -1,0 +1,18 @@
+[
+  {
+    "FilmID": 20,
+    "ImeFilma": "Montevideo",
+    "Ocena": 9.0,
+    "Trajanje": 100,
+    "Opis": "Opis1",
+    "PocetakPrikazivanja": "Jul 4, 2023"
+  },
+  {
+    "FilmID": 21,
+    "ImeFilma": "Mali Budo",
+    "Ocena": 8.0,
+    "Trajanje": 120,
+    "Opis": "Opis2",
+    "PocetakPrikazivanja": "Jul 3, 2023"
+  }
+]

@@ -1,0 +1,53 @@
+[
+  {
+    "ProjekcijaID": 39,
+    "VrstaProjekcije": "aaa",
+    "PocetakProjekcije": "Jul 26, 2023, 9:40:17 PM",
+    "Sala": {
+      "BrojSale": 1,
+      "BrojSedista": 1
+    },
+    "Film": {
+      "FilmID": 20,
+      "ImeFilma": "Montevideo",
+      "Ocena": 9.0,
+      "Trajanje": 100,
+      "Opis": "Opis1",
+      "PocetakPrikazivanja": "Jul 4, 2023"
+    }
+  },
+  {
+    "ProjekcijaID": 40,
+    "VrstaProjekcije": "bbb",
+    "PocetakProjekcije": "Jul 27, 2023, 9:40:30 PM",
+    "Sala": {
+      "BrojSale": 4,
+      "BrojSedista": 4
+    },
+    "Film": {
+      "FilmID": 20,
+      "ImeFilma": "Montevideo",
+      "Ocena": 9.0,
+      "Trajanje": 100,
+      "Opis": "Opis1",
+      "PocetakPrikazivanja": "Jul 4, 2023"
+    }
+  },
+  {
+    "ProjekcijaID": 41,
+    "VrstaProjekcije": "ggg",
+    "PocetakProjekcije": "Jul 12, 2023, 9:40:44 PM",
+    "Sala": {
+      "BrojSale": 3,
+      "BrojSedista": 3
+    },
+    "Film": {
+      "FilmID": 21,
+      "ImeFilma": "Mali Budo",
+      "Ocena": 8.0,
+      "Trajanje": 120,
+      "Opis": "Opis2",
+      "PocetakPrikazivanja": "Jul 3, 2023"
+    }
+  }
+]

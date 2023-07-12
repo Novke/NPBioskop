@@ -53,7 +53,7 @@ public class Controller {
 
     public List<Projekcija> getAllProjekcija(Projekcija projekcija) throws Exception {
         AbstractGenericOperation op = new NadjiProjekcije();
-        op.excecute(projekcija);
+        op.excecute(new Projekcija());
         return ((NadjiProjekcije)op).getList();
     }
 

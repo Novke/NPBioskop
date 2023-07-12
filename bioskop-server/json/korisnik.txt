@@ -1,0 +1,12 @@
+[
+  {
+    "KorisnikID": 18,
+    "Ime": "Novica",
+    "DatumRodjenja": "Jun 1, 1960"
+  },
+  {
+    "KorisnikID": 19,
+    "Ime": "Petar",
+    "DatumRodjenja": "Nov 28, 2003"
+  }
+]
