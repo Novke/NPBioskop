@@ -114,6 +114,17 @@
                 </excludes>
             </configuration>
         </plugin>
+        
+        <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-javadoc-plugin</artifactId>
+    <version>3.3.1</version>
+    <configuration>
+	 		<subpackages>
+				 rs.np.ac.bg.bioskop_common.domen
+			</subpackages>
+    </configuration>
+	</plugin>
       </plugins>
     </pluginManagement>
   </build>
