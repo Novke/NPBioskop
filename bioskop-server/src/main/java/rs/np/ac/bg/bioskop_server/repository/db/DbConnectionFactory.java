@@ -1,4 +1,4 @@
-package repository.db;
+package rs.np.ac.bg.bioskop_server.repository.db;
 
 import java.io.FileInputStream;
 import java.sql.Connection;

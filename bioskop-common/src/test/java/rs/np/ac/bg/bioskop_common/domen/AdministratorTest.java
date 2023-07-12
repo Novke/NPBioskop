@@ -1,6 +1,6 @@
 package rs.np.ac.bg.bioskop_common.domen;
 
-import domen.Administrator;
+import rs.np.ac.bg.bioskop_common.domen.Administrator;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

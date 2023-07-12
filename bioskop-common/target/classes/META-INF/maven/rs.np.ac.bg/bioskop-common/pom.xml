@@ -6,7 +6,7 @@
 
   <groupId>rs.np.ac.bg</groupId>
   <artifactId>bioskop-common</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>1.0.0</version>
 
   <name>bioskop-common</name>
   <!-- FIXME change it to the project's website -->
@@ -29,7 +29,7 @@
     <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
 <dependency>
     <groupId>org.junit.jupiter</groupId>
-    <artifactId>junit-jupiter-api</artifactId>
+    <artifactId>junit-jupiter</artifactId>
     <version>5.9.2</version>
     <scope>test</scope>
 </dependency>
@@ -41,7 +41,8 @@
     <scope>test</scope>
 </dependency>
 
-    
+
+ 
   </dependencies>
 
   <build>
@@ -85,6 +86,18 @@
         <plugin>
           <artifactId>maven-project-info-reports-plugin</artifactId>
           <version>3.0.0</version>
+        </plugin>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>3.0.0-M7</version>
+            <configuration>
+                <includes>
+                    <include>rs.pn.ac.bg.bioskop_common.domen.OcenaTest.java</include>
+                </includes>
+                <excludes>
+                </excludes>
+            </configuration>
         </plugin>
       </plugins>
     </pluginManagement>

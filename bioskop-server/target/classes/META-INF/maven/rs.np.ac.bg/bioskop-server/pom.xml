@@ -6,7 +6,7 @@
 
   <groupId>rs.np.ac.bg</groupId>
   <artifactId>bioskop-server</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>1.0.0</version>
 
   <name>bioskop-server</name>
   <!-- FIXME change it to the project's website -->
@@ -25,6 +25,26 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
+    
+    <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
+<dependency>
+    <groupId>org.junit.jupiter</groupId>
+    <artifactId>junit-jupiter</artifactId>
+    <version>5.9.2</version>
+    <scope>test</scope>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.mockito/mockito-core -->
+<dependency>
+    <groupId>org.mockito</groupId>
+    <artifactId>mockito-core</artifactId>
+    <version>5.4.0</version>
+    <scope>test</scope>
+</dependency>
+    <dependency>
+    <groupId>rs.np.ac.bg</groupId>
+  <artifactId>bioskop-common</artifactId>
+  <version>1.0.0</version>
+  </dependency>
   </dependencies>
 
   <build>

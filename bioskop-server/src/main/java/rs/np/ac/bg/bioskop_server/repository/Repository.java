@@ -1,4 +1,4 @@
-package repository;
+package rs.np.ac.bg.bioskop_server.repository;
 
 import java.util.List;
 

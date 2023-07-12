@@ -1,4 +1,4 @@
-package domen;
+package rs.np.ac.bg.bioskop_common.domen;
 
 import java.io.Serializable;
 

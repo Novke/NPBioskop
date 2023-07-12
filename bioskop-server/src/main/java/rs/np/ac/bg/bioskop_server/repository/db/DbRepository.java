@@ -1,7 +1,6 @@
-package repository.db;
+package rs.np.ac.bg.bioskop_server.repository.db;
 
-import repository.Repository;
-import repository.db.DbConnectionFactory;
+import rs.np.ac.bg.bioskop_server.repository.Repository;
 
 public interface DbRepository<T>  extends Repository<T> {
     default public void connect() throws Exception{

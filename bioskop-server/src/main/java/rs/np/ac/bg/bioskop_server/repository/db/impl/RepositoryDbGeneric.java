@@ -1,7 +1,7 @@
-package repository.db.impl;
+package rs.np.ac.bg.bioskop_server.repository.db.impl;
 
 import domen.GenericEntity;
-import repository.db.*;
+import rs.np.ac.bg.bioskop_server.repository.db.*;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
