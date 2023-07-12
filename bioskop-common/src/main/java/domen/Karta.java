@@ -45,6 +45,10 @@ public class Karta implements GenericEntity {
 
     /**
      * Konstruktor bez parametara.
+     * @param k 
+     * @param j 
+     * @param projekcija2 
+     * @param i 
      */
     public Karta() {
     }

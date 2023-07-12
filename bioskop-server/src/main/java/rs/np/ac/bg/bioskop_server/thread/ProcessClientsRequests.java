@@ -128,7 +128,7 @@ public class ProcessClientsRequests extends Thread {
 
                         case IZMENI_FILM:
                             film = (Film) request.getArgument();
-                            Controller.getInstance().editFilm(film);
+//                            Controller.getInstance().editFilm(film);
                             break;
 
                         case VRATI_REZERVACIJE:

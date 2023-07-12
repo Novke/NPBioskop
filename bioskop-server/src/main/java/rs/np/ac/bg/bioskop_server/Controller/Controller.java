@@ -170,8 +170,6 @@ public class Controller {
         return ((VratiRezervacije)op).getList();
     }
 
-    public void editFilm(Film film) {
-    }
 
     public void deleteKarte(Korisnik korisnik) throws Exception {
 

@@ -209,7 +209,7 @@ public class Film implements GenericEntity {
 
     @Override
     public String getInsertValues() {
-        return "(' " + imeFilma + "', " + ocena + ", " + trajanje + ", '" + opis + "', '" + DateParser.toString(pocetakPrikazivanja) + "')";
+        return "('" + imeFilma + "', " + ocena + ", " + trajanje + ", '" + opis + "', '" + DateParser.toString(pocetakPrikazivanja) + "')";
     }
 
     @Override
