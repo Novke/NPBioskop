@@ -7,7 +7,14 @@ import java.io.Serializable;
  * Implementira interfejs Serializable kako bi objekti ove klase mogli biti preneti preko mreže.
  */
 public class Response implements Serializable {
+	/**
+	 * Atribut klase objekat koji predstavlja rezultat sistemske operacije
+	 */
     private Object result;
+    
+    /**
+     * Atribut klase izuzetak koji daje detaljan opis nastale greske
+     */
     private Exception exception;
 
     /**

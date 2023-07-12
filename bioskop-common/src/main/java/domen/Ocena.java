@@ -3,6 +3,11 @@ package domen;
 import java.io.Serializable;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+/**
+ * Klasa ocena koja predstavlja subjektivna ocena stepena zadovoljstva korisnika filmom
+ * @author Novica
+ *
+ */
 
 public class Ocena implements GenericEntity {
 

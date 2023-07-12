@@ -7,7 +7,13 @@ import java.io.Serializable;
  * Implementira interfejs Serializable kako bi objekti ove klase mogli biti preneti preko mreže.
  */
 public class Request implements Serializable {
+	/**
+	 * Atribut operacija koja pomaze serveru da tumaci zahtev
+	 */
     private Operation operation;
+    /**
+     * Atribut tipa Object koji je propratni argument klijentskom zahtevu
+     */
     private Object argument;
 
     /**

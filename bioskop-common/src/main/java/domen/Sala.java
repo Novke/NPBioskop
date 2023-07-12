@@ -4,6 +4,11 @@ import java.io.Serializable;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+/**
+ * Klasa Sala koja predstavlja salu u bioskopu namenjenu za gledanje filmova
+ * @author Novica
+ *
+ */
 public class Sala implements GenericEntity {
 
 	/**

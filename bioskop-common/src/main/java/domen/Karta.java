@@ -5,6 +5,11 @@ import Util.DateParser;
 import java.io.Serializable;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+/**
+ * Klasa karte koja predstavlja ulaznicu za projekciju
+ * @author Novica
+ *
+ */
 
 public class Karta implements GenericEntity {
 

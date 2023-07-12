@@ -26,7 +26,7 @@ public interface GenericEntity extends Serializable {
 
     /**
      * Metoda koja vraca imena svih kolona izuzev ID kolone
-     * @return
+     * @return String s imenima svih kolona izuzev ID kolone
      */
     String getColumnNamesWithoutId();
 

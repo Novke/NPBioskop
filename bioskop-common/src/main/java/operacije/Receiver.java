@@ -7,6 +7,10 @@ import java.net.Socket;
  * Klasa koja se koristi za primanje objekata preko mreže.
  */
 public class Receiver {
+	
+	/**
+	 * Privatni atribut instanca tipa socket
+	 */
     private Socket socket;
 
     /**
