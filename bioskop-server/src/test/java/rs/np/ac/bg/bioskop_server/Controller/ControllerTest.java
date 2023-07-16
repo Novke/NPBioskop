@@ -160,18 +160,16 @@ class ControllerTest {
 
 	@Test
 	@DisplayName("Preconditions - Film is null")
-	void preconditionsFilmIsNullTest() {
-	    Projekcija projekcija = new Projekcija();
-	    projekcija.setFilm(null);
+	void preconditionsFilmIsNullTest() throws ParseException {
+	    Projekcija projekcija = new Projekcija(1, "vrsta", sdf.parse("2024-10-10"), new Sala(1,1), null);
 
 	    assertThrows(Exception.class, () -> controller.createProjekcija(projekcija), "Film je null");
 	}
 
 	@Test
 	@DisplayName("Preconditions - Pocetak projekcije is null")
-	void preconditionsPocetakProjekcijeIsNullTest() {
-	    Projekcija projekcija = new Projekcija();
-	    projekcija.setPocetakProjekcije(null);
+	void preconditionsPocetakProjekcijeIsNullTest() throws ParseException {
+	    Projekcija projekcija = new Projekcija(1, "vrsta", null, new Sala(1,1), randomFilm());
 
 	    assertThrows(Exception.class, () -> controller.createProjekcija(projekcija), "Pocetak projekcije je null");
 	}
@@ -196,28 +194,25 @@ class ControllerTest {
 
 	@Test
 	@DisplayName("Preconditions - Sala is null")
-	void preconditionsSalaIsNullTest() {
-	    Projekcija projekcija = new Projekcija();
-	    projekcija.setSala(null);
+	void preconditionsSalaIsNullTest() throws ParseException {
+	    Projekcija projekcija = new Projekcija(1, "vrsta", sdf.parse("2024-10-10"), null, randomFilm());
 
 	    assertThrows(Exception.class, () -> controller.createProjekcija(projekcija), "Sala je null");
 	}
 
 	@Test
 	@DisplayName("Preconditions - Sala moze biti 1, 2, 3 ili 4")
-	void preconditionsInvalidSalaNumberTest() {
-	    Projekcija projekcija = new Projekcija();
+	void preconditionsInvalidSalaNumberTest() throws ParseException {
 	    Sala sala = new Sala(5, 5); 
-	    projekcija.setSala(sala);
+	    Projekcija projekcija = new Projekcija(1, "vrsta", sdf.parse("2024-10-10"), sala, randomFilm());
 
 	    assertThrows(Exception.class, () -> controller.createProjekcija(projekcija), "Sala moze biti 1, 2, 3 ili 4");
 	}
 
 	@Test
 	@DisplayName("Preconditions - Vrsta projekcije je prazna")
-	void preconditionsVrstaProjekcijeIsBlankTest() {
-	    Projekcija projekcija = new Projekcija();
-	    projekcija.setVrstaProjekcije(""); // Set an empty vrsta projekcije
+	void preconditionsVrstaProjekcijeIsBlankTest() throws ParseException {
+	    Projekcija projekcija = new Projekcija(1, "", sdf.parse("2024-10-10"), new Sala(1,1), randomFilm());
 
 	    assertThrows(Exception.class, () -> controller.createProjekcija(projekcija), "Vrsta projekcije je prazna");
 	}
@@ -583,33 +578,29 @@ class ControllerTest {
 	}
 
 	@Test
-	void editKartaKorisnikNullTest() {
-	    Karta karta = new Karta();
-	    karta.setKorisnik(null);
+	void editKartaKorisnikNullTest() throws ParseException {
+	    Karta karta = new Karta(1, "tip", 1, 1, randomProjekcija(randomFilm()), null);
 
 	    assertThrows(Exception.class, () -> controller.editKarta(karta));
 	}
 
 	@Test
-	void editKartaRedNegativeOrZeroTest() {
-	    Karta karta = new Karta();
-	    karta.setRed(-1);
+	void editKartaRedNegativeOrZeroTest() throws ParseException {
+	    Karta karta = new Karta(1, "tip", -1, 1, randomProjekcija(randomFilm()), randomKorisnik());
 
 	    assertThrows(Exception.class, () -> controller.editKarta(karta));
 	}
 
 	@Test
-	void editKartaProjekcijaNullTest() {
-	    Karta karta = new Karta();
-	    karta.setProjekcija(null);
+	void editKartaProjekcijaNullTest() throws ParseException {
+	    Karta karta = new Karta(1, "tip", 1, 1, null, randomKorisnik());
 
 	    assertThrows(Exception.class, () -> controller.editKarta(karta));
 	}
 
 	@Test
-	void editKartaTipKarteBlankTest() {
-	    Karta karta = new Karta();
-	    karta.setTipKarte("");
+	void editKartaTipKarteBlankTest() throws ParseException {
+	    Karta karta = new Karta(1, null, 1, 1, randomProjekcija(randomFilm()), randomKorisnik());
 
 	    assertThrows(Exception.class, () -> controller.editKarta(karta));
 	}
@@ -702,19 +693,16 @@ class ControllerTest {
 
     @Test
     @DisplayName("Edit Korisnik - Blank Ime")
-    void editKorisnik_BlankIme_ThrowsException() {
-        Korisnik korisnik = new Korisnik();
-        korisnik.setIme(""); // Blank name
+    void editKorisnik_BlankIme_ThrowsException() throws ParseException {
+        Korisnik korisnik = new Korisnik(1, " ", sdf.parse("2000-10-10"));
 
         assertThrows(Exception.class, () -> controller.editKorisnik(korisnik));
     }
 
     @Test
     @DisplayName("Edit Korisnik - Future Datum Rodjenja")
-    void editKorisnik_FutureDatumRodjenja_ThrowsException() {
-        Korisnik korisnik = new Korisnik();
-        korisnik.setIme("John");
-        korisnik.setDatumRodjenja(new Date(System.currentTimeMillis() + 86400000)); // Future date
+    void editKorisnik_FutureDatumRodjenja_ThrowsException() throws ParseException {
+        Korisnik korisnik = new Korisnik(1, "ime", sdf.parse("2024-10-10"));
 
         assertThrows(Exception.class, () -> controller.editKorisnik(korisnik));
     }
