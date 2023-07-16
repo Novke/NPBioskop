@@ -3,7 +3,8 @@ package rs.np.ac.bg.bioskop_common.domen;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
-
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
@@ -142,6 +143,54 @@ public class ProjekcijaTest {
         when(resultSet.getLong("filmid")).thenReturn(1L);
 
         return resultSet;
+    }
+    
+    
+    @Test
+    public void testInvalidSetProjekcijaID_NegativeID() {
+        assertThrows(IllegalArgumentException.class, () -> projekcija.setProjekcijaID(-1));
+    }
+
+    @Test
+    public void testInvalidSetVrstaProjekcije_NullVrstaProjekcije() {
+        assertThrows(IllegalArgumentException.class, () -> projekcija.setVrstaProjekcije(null));
+    }
+
+    @Test
+    public void testInvalidSetSala_NullSala() {
+        assertThrows(IllegalArgumentException.class, () -> projekcija.setSala(null));
+    }
+
+    @Test
+    public void testInvalidSetSala_InvalidBrojSale() {
+        final Sala sala1 = new Sala(0,1);
+        assertThrows(IllegalArgumentException.class, () -> projekcija.setSala(sala1));
+
+        final Sala sala2 = new Sala(5,5);
+        assertThrows(IllegalArgumentException.class, () -> projekcija.setSala(sala2));
+    }
+
+    @Test
+    public void testInvalidSetFilm_NullFilm() {
+        assertThrows(IllegalArgumentException.class, () -> projekcija.setFilm(null));
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+            "-1",
+            "-10",
+    })
+    public void testInvalidSetProjekcijaID_InvalidParameters(long projekcijaID) {
+        assertThrows(IllegalArgumentException.class, () -> projekcija.setProjekcijaID(projekcijaID));
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+            "''",
+            "' '"
+    })
+    public void testInvalidSetVrstaProjekcije_InvalidParameters(String vrstaProjekcije) {
+        assertThrows(IllegalArgumentException.class, () -> projekcija.setVrstaProjekcije(vrstaProjekcije));
     }
 }
 

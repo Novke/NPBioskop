@@ -1,9 +1,13 @@
 package rs.np.ac.bg.bioskop_common.domen;
 
 
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 public class OcenaTest {
     private Ocena ocena;
@@ -74,6 +78,39 @@ public class OcenaTest {
         Assertions.assertEquals(expectedToString, actualToString);
     }
 
+    
+    @Test
+    public void testInvalidSetOcenaID_NegativeID() {
+        assertThrows(IllegalArgumentException.class, () -> ocena.setOcenaID(-1));
+    }
+
+    @Test
+    public void testInvalidSetKorisnik_NullKorisnik() {
+        assertThrows(IllegalArgumentException.class, () -> ocena.setKorisnik(null));
+    }
+
+    @Test
+    public void testInvalidSetFilm_NullFilm() {
+        assertThrows(IllegalArgumentException.class, () -> ocena.setFilm(null));
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+            "-1",
+            "-10",
+    })
+    public void testInvalidSetOcenaID_InvalidParameters(long ocenaID) {
+        assertThrows(IllegalArgumentException.class, () -> ocena.setOcenaID(ocenaID));
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+            "0",
+            "11"
+    })
+    public void testInvalidSetOcena_InvalidParameters(int  o) {
+        assertThrows(IllegalArgumentException.class, () -> ocena.setOcena(o));
+    }
 
 }
 

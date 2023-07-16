@@ -6,6 +6,8 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 import org.mockito.Mockito;
 
 import rs.np.ac.bg.bioskop_common.Util.DateParser;
@@ -147,6 +149,66 @@ public class FilmTest {
 
         Mockito.when(resultSet.getDate("pocetakPrikazivanja")).thenReturn(new java.sql.Date( new Date().getTime()));
         return resultSet;
+    }
+    
+    @Test
+    void setFilmID_InvalidID_ThrowsIllegalArgumentException() {
+        Film film = new Film();
+        assertThrows(IllegalArgumentException.class, () -> film.setFilmID(-1));
+    }
+
+    @Test
+    void setImeFilma_NullOrEmptyString_ThrowsIllegalArgumentException() {
+        Film film = new Film();
+        assertThrows(IllegalArgumentException.class, () -> film.setImeFilma(null));
+        assertThrows(IllegalArgumentException.class, () -> film.setImeFilma(""));
+    }
+
+    @Test
+    void setOcena_InvalidOcena_ThrowsIllegalArgumentException() {
+        Film film = new Film();
+        assertThrows(IllegalArgumentException.class, () -> film.setOcena(-1.0));
+        assertThrows(IllegalArgumentException.class, () -> film.setOcena(11.0));
+    }
+
+    @Test
+    void setTrajanje_InvalidTrajanje_ThrowsIllegalArgumentException() {
+        Film film = new Film();
+        assertThrows(IllegalArgumentException.class, () -> film.setTrajanje(0));
+        assertThrows(IllegalArgumentException.class, () -> film.setTrajanje(-100));
+    }
+
+    @Test
+    void setOpis_NullOrEmptyString_ThrowsIllegalArgumentException() {
+        Film film = new Film();
+        assertThrows(IllegalArgumentException.class, () -> film.setOpis(null));
+        assertThrows(IllegalArgumentException.class, () -> film.setOpis(""));
+    }
+
+    @Test
+    void setPocetakPrikazivanja_Null_ThrowsIllegalArgumentException() {
+        Film film = new Film();
+        assertThrows(IllegalArgumentException.class, () -> film.setPocetakPrikazivanja(null));
+    }
+    
+    @ParameterizedTest
+    @CsvSource({
+            "-1, true",
+            "0, false", 
+            "100, false" 
+    })
+    void setFilmID_InvalidID_ThrowsIllegalArgumentException(long filmID, boolean shouldThrow) {
+        if (shouldThrow) assertThrows(IllegalArgumentException.class, () -> film.setFilmID(filmID));
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+            "-1.0, true", 
+            "11.0, true", 
+            "7.5, false"
+    })
+    void setOcena_InvalidOcena_ThrowsIllegalArgumentException(double ocena, boolean shouldThrow) {
+    	if (shouldThrow) assertThrows(IllegalArgumentException.class, () -> film.setOcena(ocena));
     }
 }
 

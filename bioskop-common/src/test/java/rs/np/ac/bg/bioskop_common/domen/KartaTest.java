@@ -8,6 +8,8 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 import org.mockito.Mockito;
 
 import rs.np.ac.bg.bioskop_common.Util.DateParser;
@@ -162,6 +164,112 @@ public class KartaTest {
         Mockito.when(resultSet.getInt("red")).thenReturn(2);
         Mockito.when(resultSet.getInt("mesto")).thenReturn(5);
         return resultSet;
+    }
+    
+    @Test
+    @DisplayName("Test setting valid Karta ID")
+    void testSetKartaIDValid() {
+        Karta karta = new Karta();
+        long kartaID = 1L;
+        karta.setKartaID(kartaID);
+
+        assertEquals(kartaID, karta.getKartaID());
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+            "-1",
+            "-150"
+    })
+    @DisplayName("Test setting invalid Karta ID")
+    void testSetKartaIDInvalid(long kartaID) {
+
+        assertThrows(IllegalArgumentException.class, () -> karta.setKartaID(kartaID));
+    }
+
+    @Test
+    @DisplayName("Test setting valid Tip Karte")
+    void testSetTipKarteValid() {
+        String tipKarte = "Obicna";
+        karta.setTipKarte(tipKarte);
+
+        assertEquals(tipKarte, karta.getTipKarte());
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+            "''",
+            "' "
+    })
+    @DisplayName("Test setting invalid Tip Karte")
+    void testSetTipKarteInvalid(String tipKarte) {
+
+        assertThrows(IllegalArgumentException.class, () -> karta.setTipKarte(tipKarte));
+    }
+
+    @Test
+    @DisplayName("Test setting valid Red")
+    void testSetRedValid() {
+        int red = 1;
+        karta.setRed(red);
+
+        assertEquals(red, karta.getRed());
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+            "-1",
+            "-10"
+    })
+    @DisplayName("Test setting invalid Red")
+    void testSetRedInvalid(int red) {
+
+        assertThrows(IllegalArgumentException.class, () -> karta.setRed(red));
+    }
+
+    @Test
+    @DisplayName("Test setting valid Mesto")
+    void testSetMestoValid() {
+        int mesto = 1;
+        karta.setMesto(mesto);
+
+        assertEquals(mesto, karta.getMesto());
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+            "-1",
+            "-10"
+    })
+    @DisplayName("Test setting invalid Mesto")
+    void testSetMestoInvalid(int mesto) {
+
+        assertThrows(IllegalArgumentException.class, () -> karta.setMesto(mesto));
+    }
+
+    @Test
+    @DisplayName("Test setting valid Projekcija")
+    void testSetProjekcijaValid() {
+        Projekcija projekcija = new Projekcija();
+        karta.setProjekcija(projekcija);
+
+        assertEquals(projekcija, karta.getProjekcija());
+    }
+
+    @Test
+    @DisplayName("Test setting null Projekcija")
+    void testSetProjekcijaNull() {
+
+        assertThrows(IllegalArgumentException.class, () -> karta.setProjekcija(null));
+    }
+
+    
+
+    @Test
+    @DisplayName("Test setting null Korisnik")
+    void testSetKorisnikNull() {
+
+        assertThrows(IllegalArgumentException.class, () -> karta.setKorisnik(null));
     }
 }
 

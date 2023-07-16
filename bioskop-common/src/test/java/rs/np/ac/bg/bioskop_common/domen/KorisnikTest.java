@@ -8,6 +8,8 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -141,5 +143,48 @@ public class KorisnikTest {
 
         return resultSet;
     }
+    
+    
+    @Test
+    public void testSetKorisnikID_NegativeID_ThrowsIllegalArgumentException() {
+        assertThrows(IllegalArgumentException.class, () -> korisnik.setKorisnikID(-1));
+    }
+
+    @Test
+    public void testSetIme_NullName_ThrowsIllegalArgumentException() {
+        assertThrows(IllegalArgumentException.class, () -> korisnik.setIme(null));
+    }
+
+    @Test
+    public void testSetIme_BlankName_ThrowsIllegalArgumentException() {
+        assertThrows(IllegalArgumentException.class, () -> korisnik.setIme("  "));
+    }
+
+    @Test
+    public void testSetDatumRodjenja_FutureDate_ThrowsIllegalArgumentException() {
+        Date futureDate = new Date(System.currentTimeMillis() + 86400000); // Adding 1 day
+        assertThrows(IllegalArgumentException.class, () -> korisnik.setDatumRodjenja(futureDate));
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+            "-1",
+            "-100",
+    })
+    public void testSetKorisnikID_InvalidParameters_ThrowsIllegalArgumentException(long korisnikID) {
+        assertThrows(IllegalArgumentException.class, () -> korisnik.setKorisnikID(korisnikID));
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+            "''",
+            "' '",
+    })
+    public void testSetIme_InvalidParameters_ThrowsIllegalArgumentException(String ime) {
+        assertThrows(IllegalArgumentException.class, () -> korisnik.setIme(ime));
+    }
+
+   
+    
 }
 

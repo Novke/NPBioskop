@@ -63,8 +63,10 @@ public class Ocena implements GenericEntity {
      * Postavlja ocenu.
      *
      * @param ocena ocena
+     * @throws IllegalArgumentException Kada je prosledjena ocena van raspona 1-10
      */
     public void setOcena(int ocena) {
+    	if (ocena < 1 || ocena > 10) throw new IllegalArgumentException();
         this.ocena = ocena;
     }
 

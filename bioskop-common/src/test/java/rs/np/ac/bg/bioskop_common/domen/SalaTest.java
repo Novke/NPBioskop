@@ -134,8 +134,14 @@ public class SalaTest {
     @Test
     @DisplayName("Test setBrojSale with invalid value")
     void testSetBrojSaleWithInvalidValue() {
-        Sala sala = new Sala();
-        assertThrows(IllegalArgumentException.class, () -> sala.setBrojSale(-1)); 
+        assertThrows(IllegalArgumentException.class, () -> sala.setBrojSale(0)); 
+
+    }
+    
+    @Test
+    @DisplayName("Test setBrojSedista with invalid value")
+    void testSetBrojSedistaWithInvalidValue() {
+        assertThrows(IllegalArgumentException.class, () -> sala.setBrojSedista(-1)); 
 
     }
 }
