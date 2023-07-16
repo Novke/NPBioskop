@@ -131,5 +131,14 @@ public class SalaTest {
 
         return resultSet;
     }
+    
+    @Test
+    @DisplayName("Test setBrojSale with invalid value")
+    void testSetBrojSaleWithInvalidValue() {
+        Sala sala = new Sala();
+        sala.setBrojSale(-1); 
+
+        assertThrows(IllegalArgumentException.class, sala::getBrojSale);
+    }
 }
 

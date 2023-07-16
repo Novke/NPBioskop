@@ -1,9 +1,16 @@
 package rs.np.ac.bg.bioskop_common.domen;
 
 import rs.np.ac.bg.bioskop_common.domen.Administrator;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 public class AdministratorTest {
 
@@ -26,6 +33,11 @@ public class AdministratorTest {
         String username = administrator.getUser();
         Assertions.assertEquals("newAdmin", username);
     }
+    
+    @Test
+    public void testSetUserIllegal() {
+    	assertThrows(IllegalArgumentException.class, () -> administrator.setUser(null));
+    }
 
     @Test
     public void testGetPass() {
@@ -38,5 +50,44 @@ public class AdministratorTest {
         administrator.setPass("newPassword");
         String password = administrator.getPass();
         Assertions.assertEquals("newPassword", password);
+    }
+
+    @Test
+    public void testSetPassIllegal() {
+    	assertThrows(IllegalArgumentException.class, () -> administrator.setPass(null));
+    }
+    
+    @ParameterizedTest
+    @CsvSource({
+            "John, false",
+            "'', true",
+            "John, false"
+    })
+    public void testSetUserWithInvalidInput(String user, boolean expectException) {
+        Administrator administrator = new Administrator();
+
+        if (expectException) {
+            assertThrows(IllegalArgumentException.class, () -> administrator.setUser(user));
+        } else {
+        	administrator.setUser(user);
+        	assertEquals(user, administrator.getUser());
+        }
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+            "password123, false",
+            "'', true",
+            "password123, false"
+    })
+    public void testSetPassWithInvalidInput(String pass, boolean expectException) {
+        Administrator administrator = new Administrator();
+
+        if (expectException) {
+            assertThrows(IllegalArgumentException.class, () -> administrator.setPass(pass));
+        } else {
+        	administrator.setPass(pass);
+        	assertEquals(pass, administrator.getPass());
+        }
     }
 }

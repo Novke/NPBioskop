@@ -3,6 +3,7 @@ package domen;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.sql.SQLException;
+import java.util.Date;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -20,7 +21,9 @@ public class KartaTest {
 
     @BeforeEach
     void setUp() {
-        karta = new Karta(1, "VIP", 2, 5, new Projekcija(), new Korisnik());
+    	Film film = new Film(1, "ime", 9, 100, "opis", new Date());
+    	Projekcija projekcija = new Projekcija(1, "a", new Date(), new Sala(1,1), film);
+        karta = new Karta(1, "VIP", 2, 5, projekcija, new Korisnik(1, "aaa", new Date()));
     }
 
     @AfterEach
