@@ -8,9 +8,7 @@ import java.util.Date;
 import rs.np.ac.bg.bioskop_common.Util.DateParser;
 
 /**
- * Klasa projekcije koja predstavlja filmsku projekciju u bioskopu
- * @author Novica
- *
+ * Klasa projekcije koja predstavlja filmsku projekciju u bioskopu.
  */
 public class Projekcija implements GenericEntity {
 
@@ -38,6 +36,7 @@ public class Projekcija implements GenericEntity {
      * Film koji se prikazuje na projekciji.
      */
     private Film film;
+
     /**
      * Konstruktor bez parametara.
      */
@@ -74,8 +73,10 @@ public class Projekcija implements GenericEntity {
      * Postavlja ID projekcije.
      *
      * @param projekcijaID ID projekcije
+     * @throws IllegalArgumentException ako je ID projekcije manji od 0
      */
     public void setProjekcijaID(long projekcijaID) {
+        if (projekcijaID < 0) throw new IllegalArgumentException();
         this.projekcijaID = projekcijaID;
     }
 
@@ -92,8 +93,10 @@ public class Projekcija implements GenericEntity {
      * Postavlja vrstu projekcije.
      *
      * @param vrstaProjekcije vrsta projekcije
+     * @throws IllegalArgumentException ako je vrsta projekcije null ili prazan String
      */
     public void setVrstaProjekcije(String vrstaProjekcije) {
+        if (vrstaProjekcije == null || vrstaProjekcije.isBlank()) throw new IllegalArgumentException();
         this.vrstaProjekcije = vrstaProjekcije;
     }
 
@@ -110,8 +113,10 @@ public class Projekcija implements GenericEntity {
      * Postavlja datum i vreme pocetka projekcije.
      *
      * @param pocetakProjekcije datum i vreme pocetka projekcije
+     * @throws IllegalArgumentException ako je pocetakProjekcije null
      */
     public void setPocetakProjekcije(Date pocetakProjekcije) {
+        if (pocetakProjekcije == null) throw new IllegalArgumentException();
         this.pocetakProjekcije = pocetakProjekcije;
     }
 
@@ -128,8 +133,11 @@ public class Projekcija implements GenericEntity {
      * Postavlja salu u kojoj se odrzava projekcija.
      *
      * @param sala sala
+     * @throws IllegalArgumentException ako je sala null ili broj sale nije u validnom opsegu
      */
     public void setSala(Sala sala) {
+        if (sala == null) throw new IllegalArgumentException();
+        if (sala.getBrojSale() < 1 || sala.getBrojSale() > 4) throw new IllegalArgumentException();
         this.sala = sala;
     }
 
@@ -146,8 +154,10 @@ public class Projekcija implements GenericEntity {
      * Postavlja film koji se prikazuje na projekciji.
      *
      * @param film film
+     * @throws IllegalArgumentException ako je film null
      */
     public void setFilm(Film film) {
+        if (film == null) throw new IllegalArgumentException();
         this.film = film;
     }
 
@@ -185,7 +195,7 @@ public class Projekcija implements GenericEntity {
 
     @Override
     public String getInsertValues() {
-        return "('" + vrstaProjekcije + "', '" + DateParser.timeToString(pocetakProjekcije) + "', " + sala.getBrojSale() + ", " + film.getFilmID() +")";
+        return "('" + vrstaProjekcije + "', '" + DateParser.timeToString(pocetakProjekcije) + "', " + sala.getBrojSale() + ", " + film.getFilmID() + ")";
     }
 
     @Override
@@ -227,10 +237,10 @@ public class Projekcija implements GenericEntity {
 
     @Override
     public String AllDetails() {
-        return "PROJEKCIJA: \n"+
-                "Film: " + film.getImeFilma() +"\n" +
-                "Sala " + sala.getBrojSale() +"\n"+
-                "Vrsta projekcije: " + vrstaProjekcije +"\n" +
+        return "PROJEKCIJA:\n" +
+                "Film: " + film.getImeFilma() + "\n" +
+                "Sala: " + sala.getBrojSale() + "\n" +
+                "Vrsta projekcije: " + vrstaProjekcije + "\n" +
                 "Pocetak: " + DateParser.timeToString(pocetakProjekcije);
     }
 }

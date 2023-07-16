@@ -3,16 +3,13 @@ package rs.np.ac.bg.bioskop_common.domen;
 import java.io.Serializable;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-/**
- * Klasa ocena koja predstavlja subjektivna ocena stepena zadovoljstva korisnika filmom
- * @author Novica
- *
- */
 
+/**
+ * Klasa ocena koja predstavlja subjektivnu ocenu stepena zadovoljstva korisnika filmom.
+ */
 public class Ocena implements GenericEntity {
 
-
-	/**
+    /**
      * ID ocene.
      */
     private long ocenaID;
@@ -93,8 +90,10 @@ public class Ocena implements GenericEntity {
      * Postavlja ID ocene.
      *
      * @param ocenaID ID ocene
+     * @throws IllegalArgumentException ako je ID ocene manji od 0
      */
     public void setOcenaID(long ocenaID) {
+        if (ocenaID < 0) throw new IllegalArgumentException();
         this.ocenaID = ocenaID;
     }
 
@@ -102,8 +101,10 @@ public class Ocena implements GenericEntity {
      * Postavlja korisnika koji je dao ocenu.
      *
      * @param korisnik korisnik
+     * @throws IllegalArgumentException ako je korisnik null
      */
     public void setKorisnik(Korisnik korisnik) {
+        if (korisnik == null) throw new IllegalArgumentException();
         this.korisnik = korisnik;
     }
 
@@ -120,8 +121,10 @@ public class Ocena implements GenericEntity {
      * Postavlja film koji je ocenjen.
      *
      * @param film film
+     * @throws IllegalArgumentException ako je film null
      */
     public void setFilm(Film film) {
+        if (film == null) throw new IllegalArgumentException();
         this.film = film;
     }
 
@@ -197,8 +200,8 @@ public class Ocena implements GenericEntity {
     @Override
     public String AllDetails() {
         return "OCENA:\n" +
-                "Film: " + film.getImeFilma() +"\n" +
-                "Korisnik: " + korisnik.getIme() +"\n" +
+                "Film: " + film.getImeFilma() + "\n" +
+                "Korisnik: " + korisnik.getIme() + "\n" +
                 "Ocena: " + ocena;
     }
 }

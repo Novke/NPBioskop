@@ -47,8 +47,10 @@ public class Administrator implements Serializable {
 	 * Postavlja korisničko ime administratora.
 	 *
 	 * @param user korisničko ime
+	 * @throws IllegalArgumentException Ako je username null ili prazan string
 	 */
 	public void setUser(String user) {
+		if (user==null || user.isBlank()) throw new IllegalArgumentException();
 		this.user = user;
 	}
 	
@@ -65,8 +67,10 @@ public class Administrator implements Serializable {
 	 * Postavlja lozinku administratora.
 	 *
 	 * @param pass lozinka
+	 * @throws IllegalArgumentException ako je password null ili prazan string
 	 */
 	public void setPass(String pass) {
+		if (pass==null || pass.isBlank()) throw new IllegalArgumentException();
 		this.pass = pass;
 	}
 }

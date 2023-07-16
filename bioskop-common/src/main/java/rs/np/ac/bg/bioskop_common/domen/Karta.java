@@ -5,15 +5,13 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import rs.np.ac.bg.bioskop_common.Util.DateParser;
-/**
- * Klasa karte koja predstavlja ulaznicu za projekciju
- * @author Novica
- *
- */
 
+/**
+ * Klasa karte koja predstavlja ulaznicu za projekciju.
+ */
 public class Karta implements GenericEntity {
 
-	 /**
+    /**
      * ID karte.
      */
     private long kartaID;
@@ -49,7 +47,6 @@ public class Karta implements GenericEntity {
     public Karta() {
     }
     
-    
     /**
      * Konstruktor sa parametrima.
      *
@@ -82,8 +79,10 @@ public class Karta implements GenericEntity {
      * Postavlja ID karte.
      *
      * @param kartaID ID karte
+     * @throws IllegalArgumentException Ako je ID karte negativan broj
      */
     public void setKartaID(long kartaID) {
+    	if (kartaID < 0) throw new IllegalArgumentException();
         this.kartaID = kartaID;
     }
 
@@ -100,8 +99,10 @@ public class Karta implements GenericEntity {
      * Postavlja tip karte.
      *
      * @param tipKarte tip karte
+     * @throws IllegalArgumentException ako je tip karte null ili prazan String
      */
     public void setTipKarte(String tipKarte) {
+    	if (tipKarte == null || tipKarte.isBlank()) throw new IllegalArgumentException();
         this.tipKarte = tipKarte;
     }
 
@@ -118,8 +119,10 @@ public class Karta implements GenericEntity {
      * Postavlja red na kojem se nalazi mesto na karti.
      *
      * @param red red na karti
+     * @throws IllegalArgumentException ako je red manji od 0
      */
     public void setRed(int red) {
+    	if (red < 0) throw new IllegalArgumentException();
         this.red = red;
     }
 
@@ -136,8 +139,10 @@ public class Karta implements GenericEntity {
      * Postavlja mesto na karti.
      *
      * @param mesto mesto na karti
+     * @throws IllegalArgumentException ako je mesto manje od 0
      */
     public void setMesto(int mesto) {
+    	if (mesto < 0) throw new IllegalArgumentException();
         this.mesto = mesto;
     }
 
@@ -154,8 +159,10 @@ public class Karta implements GenericEntity {
      * Postavlja projekciju na kojoj je karta kupljena.
      *
      * @param projekcija projekcija
+     * @throws IllegalArgumentException ako je projekcija null
      */
     public void setProjekcija(Projekcija projekcija) {
+    	if (projekcija == null) throw new IllegalArgumentException();
         this.projekcija = projekcija;
     }
 
@@ -172,8 +179,10 @@ public class Karta implements GenericEntity {
      * Postavlja korisnika koji je kupio kartu.
      *
      * @param korisnik korisnik
+     * @throws IllegalArgumentException ako je korisnik null
      */
     public void setKorisnik(Korisnik korisnik) {
+    	if (korisnik == null) throw new IllegalArgumentException();
         this.korisnik = korisnik;
     }
 
@@ -251,11 +260,11 @@ public class Karta implements GenericEntity {
 
     @Override
     public String AllDetails() {
-        return "KARTA:\n"+
+        return "KARTA:\n" +
                 "Korisnik: " + korisnik.getIme() + "\n" +
-                "Film: " + projekcija.getFilm().getImeFilma() +"\n"+
-                "Sala " + projekcija.getSala().getBrojSale() + "\n"+
-                "Pocetak: " + DateParser.timeToString(projekcija.getPocetakProjekcije())+"\n"+
+                "Film: " + projekcija.getFilm().getImeFilma() + "\n" +
+                "Sala " + projekcija.getSala().getBrojSale() + "\n" +
+                "Pocetak: " + DateParser.timeToString(projekcija.getPocetakProjekcije()) + "\n" +
                 "Red: " + red + ", Mesto: " + mesto;
     }
 }

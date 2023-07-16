@@ -1,21 +1,18 @@
 package rs.np.ac.bg.bioskop_common.domen;
 
-import java.io.Serializable;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
- * Klasa Sala koja predstavlja salu u bioskopu namenjenu za gledanje filmova
- * @author Novica
- *
+ * Klasa Sala koja predstavlja salu u bioskopu namenjenu za gledanje filmova.
  */
 public class Sala implements GenericEntity {
 
-	/**
+    /**
      * Broj sale.
      */
     private long brojSale;
-    
+
     /**
      * Broj sedišta u sali.
      */
@@ -30,8 +27,8 @@ public class Sala implements GenericEntity {
     /**
      * Konstruktor sa parametrima.
      *
-     * @param brojSale      broj sale
-     * @param brojSedista   broj sedišta u sali
+     * @param brojSale    broj sale
+     * @param brojSedista broj sedišta u sali
      */
     public Sala(long brojSale, int brojSedista) {
         this.brojSale = brojSale;
@@ -51,8 +48,10 @@ public class Sala implements GenericEntity {
      * Postavlja broj sale.
      *
      * @param brojSale broj sale
+     * @throws IllegalArgumentException ako je brojSale manji od 1 ili veći od 4
      */
     public void setBrojSale(long brojSale) {
+        if (brojSale < 1 || brojSale > 4) throw new IllegalArgumentException();
         this.brojSale = brojSale;
     }
 
@@ -69,8 +68,10 @@ public class Sala implements GenericEntity {
      * Postavlja broj sedišta u sali.
      *
      * @param brojSedista broj sedišta
+     * @throws IllegalArgumentException ako je brojSedista manji od 0
      */
     public void setBrojSedista(int brojSedista) {
+        if (brojSedista < 0) throw new IllegalArgumentException();
         this.brojSedista = brojSedista;
     }
 
@@ -105,7 +106,7 @@ public class Sala implements GenericEntity {
 
     @Override
     public String getInsertValues() {
-        return "(" + brojSale + ", " + brojSedista +")";
+        return "(" + brojSale + ", " + brojSedista + ")";
     }
 
     @Override
@@ -130,7 +131,7 @@ public class Sala implements GenericEntity {
 
     @Override
     public String getWhereCondition() {
-        return "(brojSale = " + brojSale + ")";
+        return "(brojsale = " + brojSale + ")";
     }
 
     @Override

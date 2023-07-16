@@ -80,8 +80,10 @@ public class Film implements GenericEntity {
      * Postavlja ID filma.
      *
      * @param filmID ID filma
+     * @throws IllegalArgumentException ako je ID manji od 0
      */
     public void setFilmID(long filmID) {
+    	if (filmID < 0) throw new IllegalArgumentException("ID filma ne sme biti manji od 0");
         this.filmID = filmID;
     }
 
@@ -98,8 +100,10 @@ public class Film implements GenericEntity {
      * Postavlja ime filma.
      *
      * @param imeFilma ime filma
+     * @throws IllegalArgumentException ako je ime filma null ili prazan String
      */
     public void setImeFilma(String imeFilma) {
+    	if (imeFilma == null || imeFilma.isBlank()) throw new IllegalArgumentException("Ime filma ne sme biti null ili prazan");
         this.imeFilma = imeFilma;
     }
 
@@ -116,8 +120,10 @@ public class Film implements GenericEntity {
      * Postavlja ocenu filma.
      *
      * @param ocena ocena filma
+     * @throws IllegalArgumentException ako je ocena manja od 0 ili veća od 10
      */
     public void setOcena(double ocena) {
+    	if (ocena < 0 || ocena > 10) throw new IllegalArgumentException("Ocena filma mora biti između 0 i 10");
         this.ocena = ocena;
     }
 
@@ -134,8 +140,10 @@ public class Film implements GenericEntity {
      * Postavlja trajanje filma u minutima.
      *
      * @param trajanje trajanje filma
+     * @throws IllegalArgumentException ako je trajanje manje ili jednako 0
      */
     public void setTrajanje(int trajanje) {
+    	if (trajanje <= 0) throw new IllegalArgumentException("Trajanje filma mora biti veće od 0");
         this.trajanje = trajanje;
     }
 
@@ -152,8 +160,10 @@ public class Film implements GenericEntity {
      * Postavlja opis filma.
      *
      * @param opis opis filma
+     * @throws IllegalArgumentException ako je opis filma null ili prazan String
      */
     public void setOpis(String opis) {
+    	if (opis == null || opis.isBlank()) throw new IllegalArgumentException("Opis filma ne sme biti null ili prazan");
         this.opis = opis;
     }
 
@@ -170,11 +180,16 @@ public class Film implements GenericEntity {
      * Postavlja datum pocetka prikazivanja filma.
      *
      * @param pocetakPrikazivanja datum pocetka prikazivanja filma
+     * @throws IllegalArgumentException ako je datum pocetka prikazivanja null
      */
     public void setPocetakPrikazivanja(Date pocetakPrikazivanja) {
+    	if (pocetakPrikazivanja == null) throw new IllegalArgumentException("Datum pocetka prikazivanja filma ne sme biti null");
         this.pocetakPrikazivanja = pocetakPrikazivanja;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String toString() {
         return "Film{" +
@@ -187,41 +202,65 @@ public class Film implements GenericEntity {
                 '}';
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getTableName() {
         return "film";
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getColumnNames() {
         return "(filmid, imefilma, ocena, trajanje, opis, pocetakprikazivanja)";
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getColumnNamesWithoutId() {
         return "(imefilma, ocena, trajanje, opis, pocetakprikazivanja)";
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getValues() {
         return "filmId = " + filmID + ", imefilma = '" + imeFilma + "', ocena = " + ocena + ", trajanje = " + trajanje + ", opis = '" + opis + "', pocetakprikazivanja = '" + DateParser.toString(pocetakPrikazivanja) + "'";
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getInsertValues() {
         return "('" + imeFilma + "', " + ocena + ", " + trajanje + ", '" + opis + "', '" + DateParser.toString(pocetakPrikazivanja) + "')";
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void setId(long id) {
         this.filmID = id;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Long getId() {
         return filmID;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public GenericEntity extractFromResultSet(ResultSet resultSet) throws SQLException {
         Film film = new Film();
@@ -236,11 +275,17 @@ public class Film implements GenericEntity {
         return film;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getWhereCondition() {
         return "(filmId = " + filmID + ")";
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String AllDetails() {
         return "FILM:\n" +

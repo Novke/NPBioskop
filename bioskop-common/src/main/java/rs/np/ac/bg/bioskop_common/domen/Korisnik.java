@@ -8,19 +8,22 @@ import java.util.Date;
 import rs.np.ac.bg.bioskop_common.Util.DateParser;
 
 /**
- * Predstavlja korisnika, klijenta
+ * Predstavlja korisnika, klijenta.
  */
 public class Korisnik implements GenericEntity {
+
     /**
-     * Privatni atribut ID korisnika
+     * Privatni atribut ID korisnika.
      */
     private long korisnikID;
+    
     /**
-     * Privatni atribut ime korisnika
+     * Privatni atribut ime korisnika.
      */
     private String ime;
+    
     /**
-     * Privatni atribut datum rodjenja korisnika
+     * Privatni atribut datum rođenja korisnika.
      */
     private Date datumRodjenja;
 
@@ -44,50 +47,62 @@ public class Korisnik implements GenericEntity {
     }
 
     /**
-     * Vraca ID korisnika
-     * @return ID koorisnika
+     * Vraća ID korisnika.
+     *
+     * @return ID korisnika
      */
     public long getKorisnikID() {
         return korisnikID;
     }
 
     /**
-     * Postavlja ID korisnika
-     * @param korisnikID ID Korisnika
+     * Postavlja ID korisnika.
+     *
+     * @param korisnikID ID korisnika
+     * @throws IllegalArgumentException ako je ID korisnika manji od 0
      */
     public void setKorisnikID(long korisnikID) {
+        if (korisnikID < 0) throw new IllegalArgumentException();
         this.korisnikID = korisnikID;
     }
 
     /**
-     * Vraca ime korisnika
-     * @return Ime korisnika
+     * Vraća ime korisnika.
+     *
+     * @return ime korisnika
      */
     public String getIme() {
         return ime;
     }
 
     /**
-     * Postavlja ime korisnika
-     * @param ime Ime korisnika
+     * Postavlja ime korisnika.
+     *
+     * @param ime ime korisnika
+     * @throws IllegalArgumentException ako je ime korisnika null ili prazan String
      */
     public void setIme(String ime) {
+        if (ime == null || ime.isBlank()) throw new IllegalArgumentException();
         this.ime = ime;
     }
 
     /**
-     * Vraca datum rodjenja korisnika
-     * @return datum rodjenja
+     * Vraća datum rođenja korisnika.
+     *
+     * @return datum rođenja
      */
     public Date getDatumRodjenja() {
         return datumRodjenja;
     }
 
     /**
-     * Postavlja datum rodjenja korisnika
-     * @param datumRodjenja Datum rodjenja
+     * Postavlja datum rođenja korisnika.
+     *
+     * @param datumRodjenja datum rođenja
+     * @throws IllegalArgumentException ako je datum rođenja u budućnosti
      */
     public void setDatumRodjenja(Date datumRodjenja) {
+        if (datumRodjenja.after(new Date())) throw new IllegalArgumentException();
         this.datumRodjenja = datumRodjenja;
     }
 
@@ -117,7 +132,7 @@ public class Korisnik implements GenericEntity {
 
     @Override
     public String getValues() {
-        return "ime = '" + ime + "',datumrodjenja = '" + DateParser.toString(datumRodjenja) + "'";
+        return "ime = '" + ime + "', datumrodjenja = '" + DateParser.toString(datumRodjenja) + "'";
     }
 
     @Override
@@ -153,9 +168,8 @@ public class Korisnik implements GenericEntity {
 
     @Override
     public String AllDetails() {
-        return "KORISNIK: \n"+
+        return "KORISNIK:\n" +
                 "Ime: " + ime + "\n" +
-                "Datum rodjenja: " + DateParser.toString(datumRodjenja);
+                "Datum rođenja: " + DateParser.toString(datumRodjenja);
     }
 }
-
