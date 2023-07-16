@@ -144,10 +144,9 @@ public class FilmTest {
         Mockito.when(resultSet.getDouble("ocena")).thenReturn(7.5);
         Mockito.when(resultSet.getInt("trajanje")).thenReturn(120);
         Mockito.when(resultSet.getString("opis")).thenReturn("Ovo je testni film");
-        Date startDate = new Date();
-        java.sql.Date sqlStartDate = new java.sql.Date(startDate.getTime());
-        Mockito.when(resultSet.getDate("pocetakPrikazivanja")).thenReturn(sqlStartDate);
-return resultSet;
+
+        Mockito.when(resultSet.getDate("pocetakPrikazivanja")).thenReturn(new java.sql.Date( new Date().getTime()));
+        return resultSet;
     }
 }
 

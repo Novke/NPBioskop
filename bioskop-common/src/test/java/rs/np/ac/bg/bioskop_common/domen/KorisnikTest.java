@@ -80,7 +80,7 @@ public class KorisnikTest {
     @Test
     @DisplayName("Get values test")
     void getValuesTest() {
-        String expectedValues = "ime = 'John Doe',datumrodjenja = '" + DateParser.toString(korisnik.getDatumRodjenja()) + "'";
+        String expectedValues = "ime = 'John Doe', datumrodjenja = '" + DateParser.toString(korisnik.getDatumRodjenja()) + "'";
         assertEquals(expectedValues, korisnik.getValues());
     }
 
@@ -126,7 +126,7 @@ public class KorisnikTest {
     @Test
     @DisplayName("All details test")
     void allDetailsTest() {
-        String expectedAllDetails = "KORISNIK: \n" +
+        String expectedAllDetails = "KORISNIK:\n" +
                 "Ime: John Doe\n" +
                 "Datum rodjenja: " + DateParser.toString(korisnik.getDatumRodjenja());
         assertEquals(expectedAllDetails, korisnik.AllDetails());

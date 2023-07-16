@@ -170,6 +170,6 @@ public class Korisnik implements GenericEntity {
     public String AllDetails() {
         return "KORISNIK:\n" +
                 "Ime: " + ime + "\n" +
-                "Datum rođenja: " + DateParser.toString(datumRodjenja);
+                "Datum rodjenja: " + DateParser.toString(datumRodjenja);
     }
 }

@@ -12,6 +12,7 @@ import org.mockito.Mockito;
 
 import rs.np.ac.bg.bioskop_common.Util.DateParser;
 
+
 import java.sql.*;
 import java.util.Date;
 
@@ -25,6 +26,7 @@ public class KartaTest {
     	Film film = new Film(1L, "Memento", 9, 120, "Opis1", new Date());
     	Projekcija projekcija = new Projekcija(1L, "vrsta", new Date(), new Sala(1,1), film);
         karta = new Karta(1, "VIP", 2, 5, projekcija, korisnik);
+
     }
 
     @AfterEach

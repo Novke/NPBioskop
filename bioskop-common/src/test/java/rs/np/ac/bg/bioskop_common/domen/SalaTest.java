@@ -111,7 +111,7 @@ public class SalaTest {
     @Test
     @DisplayName("Get where condition test")
     void getWhereConditionTest() {
-        String expectedWhereCondition = "(brojSale = 1)";
+        String expectedWhereCondition = "(brojsale = 1)";
         assertEquals(expectedWhereCondition, sala.getWhereCondition());
     }
 
@@ -129,6 +129,14 @@ public class SalaTest {
         when(resultSet.getInt("brojsedista")).thenReturn(100);
 
         return resultSet;
+    }
+    
+    @Test
+    @DisplayName("Test setBrojSale with invalid value")
+    void testSetBrojSaleWithInvalidValue() {
+        Sala sala = new Sala();
+        assertThrows(IllegalArgumentException.class, () -> sala.setBrojSale(-1)); 
+
     }
 }
 

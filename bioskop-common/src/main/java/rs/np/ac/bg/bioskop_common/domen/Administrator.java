@@ -51,6 +51,7 @@ public class Administrator implements Serializable {
 	 */
 	public void setUser(String user) {
 		if (user==null || user.isBlank()) throw new IllegalArgumentException();
+
 		this.user = user;
 	}
 	
@@ -71,7 +72,10 @@ public class Administrator implements Serializable {
 	 */
 	public void setPass(String pass) {
 		if (pass==null || pass.isBlank()) throw new IllegalArgumentException();
+
 		this.pass = pass;
 	}
+	
+	
 }
 
