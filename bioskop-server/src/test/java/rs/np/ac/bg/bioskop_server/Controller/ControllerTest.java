@@ -24,10 +24,10 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
-import rs.np.ac.bg.bioskop_common.domen.*;
-import rs.np.ac.bg.bioskop_common.domen.Projekcija;
 import rs.np.ac.bg.bioskop_server.property.PropertyFileOperation;
 import rs.np.ac.bg.bioskop_server.repository.db.DbConnectionFactory;
+
+import rs.np.ac.bg.bioskop_common.domen.*;
 
 
 class ControllerTest {
